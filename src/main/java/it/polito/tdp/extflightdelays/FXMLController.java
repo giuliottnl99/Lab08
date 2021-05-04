@@ -35,6 +35,11 @@ public class FXMLController {
 
     @FXML
     void doAnalizzaAeroporti(ActionEvent event) {
+    	Model m = new Model(Integer.valueOf(distanzaMinima.getText()));
+    	this.txtResult.appendText("Gli aereoporti totali sono: "+m.getnumeroVertici());
+    	this.txtResult.appendText("I percorsi totali sono: " + m.getNumeroArchi());
+    	this.txtResult.appendText("Ecco di seguito l'elenco degli aereoporti selezionati: \n" + m.getAllFlights());
+    	
     	//TODO
     }
 
