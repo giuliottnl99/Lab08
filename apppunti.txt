@@ -1,0 +1,71 @@
+	 * Innanzitutto devo prendere tutti gli aereoporti che rispettano le regole sulla media delle distanze
+	 * 
+	 * Innanzitutto prendo tutte le varie liste
+	 * Una volta prese faccio il grafo
+	 * Fatto il grafo faccio la media per ogni collegamento
+Trovata la media per ogni collegamento, rimuovo il collegamento dal grafo se non rispetta il vincolo
+
+Quindi:
+Per ogni collegamento, calcolo la media
+vedo se la media rispetta il vincolo, se non la rispetto lo tolgo.
+
+
+Oppure, 
+per ogni volo aggiungilo al grafo
+
+Per trovare al media uso la lista dei voli adeguati:
+solo se il volo ha un certo vertice di arrivo e un certo vertice di partenza lo considero. 
+
+Scorro in un for i voli considerati, usando la somma e il count. Alla fine verrà fuori una media
+
+prima aggiungo tutti i percorsi, poi prendo tutti i percorsi che vanno da un certo nodo a un certo nodo (getAllEdges) e faccio la media per ognuno. Se la media non è rispettata, tolgo tutti i nodi che seguono quel percorso.
+Il risultato poi lo manipolo con le funzioni risultato
+
+Alla fine:
+
+stampo i vertici dei dati 
+stampo gli archi dei dati
+elenco gli archi con la relativa distanza
+
+
+
+Problema: come scorrere tutti i nodi che vanno da un certo percorso a un certo percorso? rICORSIVO? iTERATIVO?
+Per ogni vertice di partenza
+	per ogni vertice di arrivo
+		per ogni edge che va da quel grafo di partenza o di arrivo
+			calcolo la somma delle distanze e il count
+		media=somma/count; Se media<max -->remove
+			
+
+
+NOTE:
+
+airport e flight devono avere la stringa descriviti, per descriversi
+è necessaria la funzione che ritorna la stringa.
+
+
+Problema:
+
+ad ogni percorso è associato solo un nodo di partenza e di arrivo. Come associarci anche i voli con la distanza?
+Come faccio ad assegnare la distanza ai grafici pesati?
+
+
+
+
+
+
+Problemi teorici:
+
+Come inserisco in un grafo i voli? So solo come aggiungere i percorsi, ma non i voli sul percorso. Aggiungo una lista di voli a quel percorso?
+
+Problema:
+
+il grafo è organizzato in percorsi, ma a me interessano i voli
+
+per ogni vertice volo
+	se esiste un edge con vertice di partenza e vertice di arrivo coincidente.
+	ossia se la lista ritornata è diversa da null
+		aggiungi tale volo alla Stringa risultato
+	altrimenti continua
+		
+

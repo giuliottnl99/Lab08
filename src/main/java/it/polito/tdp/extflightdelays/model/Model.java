@@ -89,12 +89,16 @@ public class Model {
 					somma+= grafo.getEdgeWeight(thisEdge);
 					count++;
 				}
+				
 				double media=somma/count;
 				if (media<distanzaMinima) {
 					grafo.removeAllEdges(aPart, aArr);
 				}
+				
 			}
+			
 		}
+		System.out.println("Pulizia finita");
 		 
 	}
 	
@@ -109,10 +113,13 @@ public class Model {
 		
 		//Ora che li bho caricati tutti, voglio verificare la distanza minima dell'aereoporto.
 		// Elimino le linee che non rispettano la distanza minima
+		System.out.println("Database interrogati");
 		Graphs.addAllVertices(grafo, airports);
+		System.out.println("Vertici aggiunti");
 		for(Flight f : flights) {		
 			Graphs.addEdgeWithVertices(grafo, this.cercaAereoporto(f.getOriginAirportId()), this.cercaAereoporto(f.getDestinationAirportId()), f.getDistance());
 		}
+		System.out.println("Percorsi aggiunti");
 		this.pulisciGrafo(valore);
 		
 	}
